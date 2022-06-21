@@ -1,8 +1,7 @@
 #include "buffer/BufferPoolManager.h"
 
 BufferPoolManager::BufferPoolManager(size_t poolSize,
-                                    page_id_t nextPage,
-                                    DiskIOManager* ioManager) : poolFrameSize(poolSize), nextPageId(nextPage), diskMgr(ioManager) {
+                                    DiskIOManager* ioManager) : poolFrameSize(poolSize), nextPageId(ioManager->pages()), diskMgr(ioManager) {
     pool = new Page[poolSize];
     lruCache = new LruCache(poolSize);
 

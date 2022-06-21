@@ -21,7 +21,7 @@ using std::atomic;
  */
 class BufferPoolManager {
 public:
-    BufferPoolManager(size_t poolSize, page_id_t nextPage, DiskIOManager* ioManager);
+    BufferPoolManager(size_t poolSize, DiskIOManager* ioManager);
     BufferPoolManager() = delete;
     ~BufferPoolManager();
     Page* getPage(page_id_t id);

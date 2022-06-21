@@ -18,7 +18,7 @@ class BufferPoolMgrTest : public ::testing::Test {
 
 TEST_F(BufferPoolMgrTest, BasicTest) {
     DiskIOManager ioManager{DBFILE_NAME};
-    BufferPoolManager poolMgr{8, 0, &ioManager};
+    BufferPoolManager poolMgr{8, &ioManager};
 
     EXPECT_EQ(nullptr, poolMgr.getPage(0));
     EXPECT_FALSE(poolMgr.flushPage(0));
