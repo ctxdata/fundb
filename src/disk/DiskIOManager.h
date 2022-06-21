@@ -15,6 +15,6 @@ private:
 public:
     DiskIOManager(const string& db);
     ~DiskIOManager();
-    size_t readPage(size_t pageNum, char* dataOut, size_t pageCount = 1);
-    size_t writePage(size_t pageNum, const char* const dataIn, size_t pageCount = 1);
+    size_t readPage(page_id_t pageId, char* dataOut, size_t pageCount = 1);
+    size_t writePage(page_id_t pageId, const char* const dataIn, size_t pageCount = 1);
 };
